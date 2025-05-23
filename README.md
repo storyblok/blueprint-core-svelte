@@ -9,6 +9,9 @@ This blueprint is ideal for kickstarting new Storyblok and Svelte projects. What
 - Dynamic routing to fetch and render new stories automatically
 - Minimal styling
 
+> [!TIP]
+> Follow our [Svelte guide](https://storyblok.com/docs/guides/svelte) for a step-by-step walkthrough and learn more about Storyblok's range of features, including rich text rendering, custom content modeling, and internationalization. See the [@storyblok/svelte package reference](https://storyblok.com/docs/packages/storyblok-svelte) for further information.
+
 ---
 
 [![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in%20GitHub%20Codespaces-dad4ff.svg?style=for-the-badge&logo=GitHub&logoColor=181717&labelColor=ffffff&color=dad4ff)](https://codespaces.new/storyblok/blueprint-blank-svelte)
@@ -32,9 +35,8 @@ npm install
 
 In the root of the project, create a `.env` file to store your Storyblok access tokens:
 
-```txt
-VITE_STORYBLOK_DELIVERY_API_TOKEN_PREVIEW="<YOUR_PREVIEW_TOKEN>"
-VITE_STORYBLOK_DELIVERY_API_TOKEN_PUBLIC="<YOUR_PUBLIC_TOKEN>"
+```sh
+VITE_STORYBLOK_DELIVERY_API_TOKEN=<REPLACE_WITH_YOUR_TOKEN>
 ```
 
 > [!IMPORTANT]
@@ -45,16 +47,21 @@ VITE_STORYBLOK_DELIVERY_API_TOKEN_PUBLIC="<YOUR_PUBLIC_TOKEN>"
 
 To render a preview of the local project in the Visual Editor, follow these steps:
 
-First, set up an HTTPS proxy on your machine. Here are instructions for [Mac](https://www.storyblok.com/faq/setup-dev-server-https-proxy) and [Windows](https://www.storyblok.com/faq/setup-dev-server-https-windows).
+1. In your space, navigate to **Settings > Visual Editor**.
+2. Set the default environment to `https://localhost:5173/`.
+3. Save.
+4. Open the `home` story.
+5. Click **Config**.
+6. Type `/` in the **Real path**.
 
-Then, navigate to **Settings > Visual Editor** and set the default environment to the HTTPS localhost URL you defined in your proxy configuration. Save.
+Run the development server:
 
-Open the `home` story in your Storyblok space and click **Config**. Set the **real path** to `/`.
-
-Run the development server with the HTTPS proxy.
+```sh
+npm run dev
+```
 
 > [!IMPORTANT]
-> To connect the Storyblok Visual Editor, the local project must run over HTTPS. Learn more in the [Visual Editor concept](https://www.storyblok.com/docs/concepts/visual-editor#local-development-via-https).
+> To connect the Storyblok Visual Editor, the local project must run over HTTPS. Learn more in the [Visual Editor concept](https://www.storyblok.com/docs/concepts/visual-editor#local-development-via-https). See the [Visual Preview part of the Svelte guide](https://storyblok.com/docs/guides/svelte/visual-preview) for detailed instructions.
 
 Back in Storyblok, open the **Home** story to start editing.
 
@@ -63,7 +70,8 @@ Happy building!
 ## Resources
 
 - To learn more about what you can do with Storyblok, visit [our documentation and learning hub](https://www.storyblok.com/docs).
-- To learn more about the integration between Storyblok and Next.js, check our [dedicated developer tutorials](https://www.storyblok.com/tutorials?technologies=next).
+- To learn more about the integration between Storyblok and Svelte, check our [dedicated developer tutorials](https://www.storyblok.com/tutorials?technologies=svelte).
+- - To learn more about Svelte, check the [official documentation](https://svelte.dev/docs).
 
 ### Support
 
