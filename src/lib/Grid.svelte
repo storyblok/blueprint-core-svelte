@@ -1,5 +1,3 @@
-<!-- src/lib/Grid.svelte -->
-
 <script>
   import { StoryblokComponent, storyblokEditable } from "@storyblok/svelte";
 

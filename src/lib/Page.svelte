@@ -1,5 +1,3 @@
-<!-- src/lib/Page.svelte -->
-
 <script>
   import { StoryblokComponent, storyblokEditable } from "@storyblok/svelte";
 

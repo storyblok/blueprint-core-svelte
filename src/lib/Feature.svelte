@@ -1,5 +1,3 @@
-<!-- src/lib/Feature.svelte -->
-
 <script> 
   import { storyblokEditable } from "@storyblok/svelte"
 
@@ -7,5 +5,5 @@
 </script>
 
 <div class="feature" use:storyblokEditable={blok}>
-  <p>{blok.name}</p>
+  <span>{blok.name}</span>
 </div>

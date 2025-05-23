@@ -1,5 +1,3 @@
-<!-- src/lib/Teaser.svelte -->
-
 <script> 
   import { storyblokEditable } from "@storyblok/svelte"
 
@@ -7,5 +5,5 @@
 </script>
 
 <div class="teaser" use:storyblokEditable={blok}>
-  <h1>{blok.headline}</h1>
+  <h2>{blok.headline}</h2>
 </div>

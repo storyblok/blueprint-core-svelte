@@ -1,34 +1,32 @@
-import { apiPlugin, storyblokInit, useStoryblokApi } from "@storyblok/svelte";
-import Teaser from "$lib/Teaser.svelte"
-import Feature from "$lib/Feature.svelte"
-import Grid from "$lib/Grid.svelte"
-import Page from "$lib/Page.svelte"
+import { apiPlugin, storyblokInit, useStoryblokApi } from '@storyblok/svelte';
+import Teaser from '$lib/Teaser.svelte';
+import Feature from '$lib/Feature.svelte';
+import Grid from '$lib/Grid.svelte';
+import Page from '$lib/Page.svelte';
 
 export async function load(params) {
-  const isPreview = Boolean(
-    (new URLSearchParams(params.url.searchParams)).get("_storyblok") || params.url.hostname.includes("localhost")
-  )
+	storyblokInit({
+		accessToken: import.meta.env.VITE_STORYBLOK_DELIVERY_API_TOKEN,
+		apiOptions: {
+			/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js */
+			region: 'eu',
+			/** The following code is only required when creating a Storyblok space directly via the Blueprints feature. */
+			endpoint: import.meta.env.VITE_STORYBLOK_API_BASE_URL
+				? `${new URL(import.meta.env.VITE_STORYBLOK_API_BASE_URL).origin}/v2`
+				: undefined,
+		},
+		use: [apiPlugin],
+		components: {
+			teaser: Teaser,
+			feature: Feature,
+			grid: Grid,
+			page: Page,
+		},
+	});
 
-  storyblokInit({
-    accessToken: isPreview
-      ? import.meta.env.VITE_STORYBLOK_DELIVERY_API_TOKEN_PREVIEW
-      : import.meta.env.VITE_STORYBLOK_DELIVERY_API_TOKEN_PUBLIC,
-    apiOptions: {
-      region: 'eu', // Choose the correct region from your Space.
-    },
-    use: [apiPlugin],
-    components: {
-      teaser: Teaser,
-      feature: Feature,
-      grid: Grid,
-      page: Page,
-    }
-  });
+	const storyblokAPI = await useStoryblokApi();
 
-  const storyblokAPI = await useStoryblokApi();
-
-  return {
-    storyblokAPI,
-    isPreview
-  };
+	return {
+		storyblokAPI,
+	};
 }
