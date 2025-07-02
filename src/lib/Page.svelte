@@ -1,11 +1,13 @@
 <script>
-  import { StoryblokComponent, storyblokEditable } from "@storyblok/svelte";
+	import { StoryblokComponent, storyblokEditable } from '@storyblok/svelte';
 
-  export let blok;
+	export let blok;
 </script>
 
-<main class="page" use:storyblokEditable={blok}>
-  {#each blok.body as blok}
-    <StoryblokComponent {blok} />
-  {/each}
-</main>
+{#key blok}
+	<main class="page" use:storyblokEditable={blok}>
+		{#each blok.body as blok}
+			<StoryblokComponent {blok} />
+		{/each}
+	</main>
+{/key}

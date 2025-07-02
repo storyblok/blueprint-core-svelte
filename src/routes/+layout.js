@@ -6,13 +6,13 @@ import Page from '$lib/Page.svelte';
 
 export async function load(params) {
 	storyblokInit({
-		accessToken: import.meta.env.VITE_STORYBLOK_DELIVERY_API_TOKEN,
+		accessToken: import.meta.env.STORYBLOK_DELIVERY_API_TOKEN,
 		apiOptions: {
-			/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js */
+			/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
 			region: 'eu',
 			/** The following code is only required when creating a Storyblok space directly via the Blueprints feature. */
-			endpoint: import.meta.env.VITE_STORYBLOK_API_BASE_URL
-				? `${new URL(import.meta.env.VITE_STORYBLOK_API_BASE_URL).origin}/v2`
+			endpoint: import.meta.env.STORYBLOK_API_BASE_URL
+				? `${new URL(import.meta.env.STORYBLOK_API_BASE_URL).origin}/v2`
 				: undefined,
 		},
 		use: [apiPlugin],
