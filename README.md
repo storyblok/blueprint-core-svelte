@@ -1,4 +1,4 @@
-# Storyblok Starter Space Blueprint: Svelte
+# Storyblok Core Space Blueprint: Svelte
 
 Integrate [Svelte](http://svelte.dev/) with [Storyblok](http://www.storyblok.com) as a headless CMS.
 
