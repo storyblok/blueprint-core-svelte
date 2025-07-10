@@ -9,10 +9,8 @@ This blueprint is ideal for kickstarting new Storyblok and Svelte projects. What
 - Dynamic routing to fetch and render new stories automatically
 - Minimal styling
 
-<!--
 > [!TIP]
 > Follow our [Svelte guide](https://storyblok.com/docs/guides/svelte) for a step-by-step walkthrough and learn more about Storyblok's range of features, including rich text rendering, custom content modeling, and internationalization. See the [@storyblok/svelte package reference](https://storyblok.com/docs/packages/storyblok-svelte) for further information.
--->
 
 ---
 
