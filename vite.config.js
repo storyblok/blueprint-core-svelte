@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => {
 			'import.meta.env.STORYBLOK_API_BASE_URL': JSON.stringify(
 				env.STORYBLOK_API_BASE_URL,
 			),
+			'import.meta.env.STORYBLOK_REGION': JSON.stringify(env.STORYBLOK_REGION),
 		},
 	};
 });
