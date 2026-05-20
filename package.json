@@ -10,12 +10,12 @@
 		"prepare": "svelte-kit sync || echo ''"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^6.0.1",
-		"@sveltejs/kit": "^2.21.1",
-		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@sveltejs/adapter-auto": "^7.0.1",
+		"@sveltejs/kit": "^2.60.1",
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
 		"svelte": "^5.33.1",
-		"vite": "^6.3.5",
-		"vite-plugin-mkcert": "^1.17.8"
+		"vite": "^8.0.13",
+		"vite-plugin-mkcert": "^2.0.0"
 	},
 	"dependencies": {
 		"@storyblok/js": "^4.0.0",
