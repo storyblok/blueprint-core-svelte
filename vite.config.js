@@ -1,10 +1,13 @@
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, loadEnv } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-	const env = loadEnv(mode, process.cwd(), '');
+	const projectRoot = dirname(fileURLToPath(import.meta.url));
+	const env = loadEnv(mode, projectRoot, 'STORYBLOK_');
 	return {
 		plugins: [sveltekit(), mkcert()],
 		define: {
