@@ -18,7 +18,7 @@
 		"vite-plugin-mkcert": "^2.1.0"
 	},
 	"dependencies": {
-		"@storyblok/js": "^6.4.1",
+		"@storyblok/js": "^6.5.0",
 		"@storyblok/svelte": "^7.4.0"
 	},
 	"overrides": {
